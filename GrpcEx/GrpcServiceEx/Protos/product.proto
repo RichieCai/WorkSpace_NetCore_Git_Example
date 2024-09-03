@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServiceEx.Protos";
+
+package product;
+
+service ProductService {
+
+  rpc Get(ProductInput)returns (ProductResult);
+}
+
+
+message ProductInput {
+  int32 ProductId =1;
+}
+message ProductResult{
+	int32 ProductId =1;
+	string ProductName=2;
+	int32 Price=3;
+	int32 Quailty=4;
+}

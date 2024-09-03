@@ -1,0 +1,27 @@
+﻿<!-- Views/Home/Delete.cshtml -->
+@model WebTestEx_Redis.Models.User
+
+<h2>Delete User</h2>
+
+<p>Are you sure you want to delete this user?</p>
+
+<table class="table">
+    <tr>
+        <th>UserId</th>
+        <td>@Model.UserId</td>
+    </tr>
+    <tr>
+        <th>UserName</th>
+        <td>@Model.UserName</td>
+    </tr>
+    <tr>
+        <th>Age</th>
+        <td>@Model.Age</td>
+    </tr>
+    <!-- 添加其他字段... -->
+</table>
+
+<form asp-action="Delete" asp-route-id="@Model.UserId" method="post">
+    <input type="submit" value="Delete" class="btn btn-danger" />
+    <a asp-action="UserView">Back to List</a>
+</form>

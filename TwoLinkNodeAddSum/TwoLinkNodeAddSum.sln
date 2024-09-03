@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoLinkNodeAddSum", "TwoLinkNodeAddSum\TwoLinkNodeAddSum.csproj", "{74BA164A-3140-4120-8876-C51BD28AB800}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74BA164A-3140-4120-8876-C51BD28AB800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74BA164A-3140-4120-8876-C51BD28AB800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74BA164A-3140-4120-8876-C51BD28AB800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74BA164A-3140-4120-8876-C51BD28AB800}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6ABAC38B-C651-49CF-816C-236DC8DDFEA3}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+   
+    <br/>
+    <span>name</span><input type="text" id="txtName"/>    <br/>
+    <span>Msg</span><input type="text" id="txtMsg"/>    <br/>
+    <button id="btnSend">send</button>    <br/>
+    <label id="lbMsg">
+
+    </label>
+</head>
+<body>
+    
+    <script>
+        var server = 'wss://localhost:7070'; //如果开启了https则这里是wss
+        var vWebSocket=null;
+        window.onload = function () {
+            //建立一個web socket 連線
+            vWebSocket=new WebSocket(server+'/ws');
+            document.getElementById("btnSend").addEventListener("click", sendMsg);
+            //如果連線成功
+            vWebSocket.onopen=function(e){
+                console.log('connection start ...');
+                var content=document.getElementById("lbMsg");
+                content.innerText=content.innerText+'\r\n'+"conection.....";
+            }
+            //接收到訊息時
+            vWebSocket.onmessage=function(e){
+                console.log('Recevied Message:'+e.data);
+                if(e.data){
+                    var content=document.getElementById("lbMsg");
+                    content.innerText=content.innerText+'\r\n'+e.data;
+                }
+            }
+            //關閉連線時
+            vWebSocket.onclose=function(e){
+                console.log("connection closed");
+            }
+        };
+
+        function sendMsg()
+        {
+            var txtName=document.getElementById("txtName").value;
+            var txtMsg=document.getElementById("txtMsg").value;
+            if (txtName) {
+                var data = {
+                    action: 'sendMsg',
+                    name: txtName,
+                    msg: txtMsg
+                };
+                vWebSocket.send(JSON.stringify(data));
+            }
+        }
+
+    </script>
+</body>
+</html>

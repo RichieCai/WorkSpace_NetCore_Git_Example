@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>b6b2ac6b-7d04-4881-adf7-0650846b106f</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="RepositoryLB\**" />
+    <Compile Remove="ToDoListRepository\**" />
+    <Content Remove="RepositoryLB\**" />
+    <Content Remove="ToDoListRepository\**" />
+    <EmbeddedResource Remove="RepositoryLB\**" />
+    <EmbeddedResource Remove="ToDoListRepository\**" />
+    <None Remove="RepositoryLB\**" />
+    <None Remove="ToDoListRepository\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\AuthController.cs" />
+    <Compile Remove="Controllers\ValuesController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Generally\Generally.csproj" />
+  </ItemGroup>
+
+</Project>
