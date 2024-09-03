@@ -1,0 +1,38 @@
+﻿@model WebRedisEx.ViewModels.ShowVM<List<WebRedisEx.ViewModels.UserVM>>
+
+
+<div class="text-center">
+    <span>查詢</span>
+
+
+    <div class="row-cols-1">
+        <label></label>
+    </div>
+    <div>
+        <label>資料取得方式</label>
+        <label>@Model.Method</label>
+    </div>
+    <table>
+        <tr>
+            <th>使用者id</th>
+            <th>使用者名稱</th>
+            <th>年齡</th>
+            <th>性別</th>
+            <th>電話</th>
+            <th>縣市</th>
+        </tr>
+        @foreach (var item in Model.Data)
+        {
+            <tr>
+                <td>@item.UserId</td>
+                <td>@item.UserName</td>
+                <td>@item.Age</td>
+                <td>@item.Sex</td>
+                <td>@item.Phone</td>
+                <td>@item.CityName</td>
+            </tr>
+        }
+    </table>
+
+
+</div>

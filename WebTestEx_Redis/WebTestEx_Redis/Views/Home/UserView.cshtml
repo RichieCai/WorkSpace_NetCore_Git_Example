@@ -1,0 +1,35 @@
+﻿<!-- Views/Home/UserView.cshtml -->
+@model List<WebTestEx_Redis.Models.User>
+
+<h2>User List</h2>
+<br />
+<a href="@Url.Action("Add", "Home")">Add</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>UserId</th>
+            <th>UserName</th>
+            <th>Age</th>
+            <th>CityName</th>
+            <th>function</th>
+            <!-- Add other headers as needed -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserId</td>
+                <td>@user.UserName</td>
+                <td>@user.Age</td>
+                <td>@user.CityName</td>
+                <td>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@user.UserId">Delete</a><br />
+                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@user.UserId">Edit</a>  <br>
+                    <a asp-controller="Home" asp-action="Detail" asp-route-id="@user.UserId">Detail</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServiceEx.Protos";
+
+package user;
+
+// The greeting service definition.
+service UserService {
+
+  rpc GetAllName(UserInput)returns (UserResult);
+}
+
+
+message UserInput {
+  int32 UserId =1;
+}
+message UserResult{
+	int32 UserId =1;
+	string UserName=2;
+	int32 Phone=3;
+}
