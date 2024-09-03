@@ -1,2 +1,0 @@
-示範如何直接產生測試資料localdb
-code first

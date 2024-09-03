@@ -1,6 +1,0 @@
-@WebApiFileEx_HostAddress = http://localhost:5183
-
-GET {{WebApiFileEx_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
